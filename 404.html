@@ -44,21 +44,17 @@
     <script>
         const cursor = document.querySelector("#cursor");
         
-        // Mouse Tracking
         document.addEventListener("mousemove", (e) => {
             gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
         });
 
-        // Entrance Sequence
         window.addEventListener("load", () => {
-            // Fade out the transition curtain
             gsap.to("#page-transition", { 
                 opacity: 0, 
                 duration: 1.2, 
                 onComplete: () => document.getElementById('page-transition').style.visibility = 'hidden' 
             });
 
-            // Animate 404 elements
             gsap.to(".reveal", { 
                 opacity: 1, 
                 y: 0, 
@@ -68,7 +64,6 @@
             });
         });
 
-        // Cursor Scaling for button
         const btn = document.querySelector('a');
         btn.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 8, backgroundColor: "rgba(255,255,255,0.1)" }));
         btn.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: "white" }));
