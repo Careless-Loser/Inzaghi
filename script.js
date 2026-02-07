@@ -1,49 +1,163 @@
-// 1. Initialize Lenis (Smooth Scroll)
-const lenis = new Lenis()
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-requestAnimationFrame(raf)
+/**
+ * INZAGHI PORTFOLIO - Full Production Script
+ * Integrated with Narrative Paragraph Logic
+ */
 
-// 2. Custom Cursor Logic
+// 1. Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// 2. Custom Cursor Movement
 const cursor = document.querySelector("#cursor");
 document.addEventListener("mousemove", (e) => {
     gsap.to(cursor, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.5,
-        ease: "power3.out"
+        duration: 0.1,
+        ease: "none"
     });
 });
 
-// 3. GSAP Animations
+// 3. Link & Card Hover Interactions
+document.querySelectorAll('a, .bento-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        gsap.to(cursor, { scale: 8, backgroundColor: "rgba(255,255,255,0.2)" });
+    });
+    el.addEventListener('mouseleave', () => {
+        gsap.to(cursor, { scale: 1, backgroundColor: "white" });
+    });
+});
+
+// 4. GSAP Animations & ScrollTriggers
 gsap.registerPlugin(ScrollTrigger);
 
-// Initial Load Animation
 window.addEventListener("load", () => {
-    const tl = gsap.timeline();
-    
-    tl.to(".reveal", {
+    // Initial Entrance Reveal (Hero & Navigation)
+    gsap.to(".reveal", {
         opacity: 1,
         y: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "power4.out"
+        duration: 1.5,
+        stagger: 0.1,
+        ease: "expo.out"
+    });
+
+    // Bento Card Scroll Reveals (Gallery Section)
+    gsap.utils.toArray(".bento-card").forEach((card) => {
+        gsap.to(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom-=100px",
+                toggleActions: "play none none none"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+
+    
+
+    // Narrative Scroll Reveals (For Aboutme.html paragraphs)
+    gsap.utils.toArray(".reveal-section").forEach((section) => {
+        gsap.to(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power2.out"
+        });
+    });
+
+    /**
+ * INZAGHI PORTFOLIO - Master Script
+ */
+
+// 1. Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// 2. Custom Cursor Movement
+const cursor = document.querySelector("#cursor");
+if (window.matchMedia("(pointer: fine)").matches) {
+    document.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+            ease: "none"
+        });
+    });
+}
+
+// 3. Hover Interactions (Logo, Links, Cards)
+document.querySelectorAll('a, .bento-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        gsap.to(cursor, { 
+            scale: 8, 
+            backgroundColor: "rgba(255,255,255,0.2)",
+            duration: 0.4 
+        });
+    });
+    el.addEventListener('mouseleave', () => {
+        gsap.to(cursor, { 
+            scale: 1, 
+            backgroundColor: "white",
+            duration: 0.3 
+        });
     });
 });
 
-// Scroll Reveal for Cards
-gsap.utils.toArray(".bento-card").forEach(card => {
-    gsap.from(card, {
-        scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100px",
-            toggleActions: "play none none none"
-        },
-        opacity: 0,
-        y: 60,
+// 4. GSAP ScrollReveal Logic
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+    // Initial entrance for all "reveal" items
+    gsap.to(".reveal", {
+        opacity: 1,
+        y: 0,
         duration: 1.5,
-        ease: "power4.out"
+        stagger: 0.1,
+        ease: "expo.out"
+    });
+
+    // Bento Card Scroll Animations
+    gsap.utils.toArray(".bento-card").forEach((card) => {
+        gsap.to(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom-=80px",
+                toggleActions: "play none none none"
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
     });
 });
+
+});
+

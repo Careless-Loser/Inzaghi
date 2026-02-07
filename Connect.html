@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INZAGHI | Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+
+    <div id="cursor"></div>
+
+    <nav class="fixed w-full z-[100] p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+        <a href="index.html" class="group relative flex items-center justify-center w-10 h-10">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-white animate-spin-slow">
+                <path d="M12 2V5M12 19V22M2 12H5M19 12H22" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12 7L17 12L12 17L7 12L12 7Z" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="0.5" fill="white"/>
+            </svg>
+        </a>
+        <a href="index.html" class="text-[10px] uppercase tracking-widest font-bold border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-500">Back Home</a>
+    </nav>
+
+    <main class="min-h-screen pt-40 pb-20 px-6 relative z-10">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="text-center mb-16 reveal">
+                <h1 class="hero-text text-6xl md:text-8xl mb-4">CONNECT</h1>
+                <p class="text-[10px] uppercase tracking-[0.6em] opacity-40">Systems Thinking // Creative Technologist</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <a href="https://linkedin.com/in/ifrahimtiaz/" target="_blank" class="bento-card !min-h-[160px] flex items-center justify-between group reveal">
+                    <div>
+                        <span class="tag mb-2">Network</span>
+                        <h2 class="card-title text-2xl font-bold tracking-widest uppercase">LINKEDIN</h2>
+                    </div>
+                    <span class="text-1xl group-hover:translate-x-1 transition-transform">↗</span>
+                </a>
+
+                <a href="https://github.com/Careless-Loser" target="_blank" class="bento-card !min-h-[160px] flex items-center justify-between group reveal">
+                    <div>
+                        <span class="tag mb-2">Code</span>
+                        <h2 class="card-title text-2xl font-bold tracking-widest uppercase">GITHUB</h2>
+                    </div>
+                    <span class="text-1xl group-hover:translate-x-1 transition-transform">↗</span>
+                </a>
+            </div>
+
+            <div class="space-y-4">
+                <a href="https://www.instagram.com/iamaddictedtoblackcoffee/" target="_blank" class="bento-card !min-h-[80px] flex items-center justify-between px-8 py-6 group reveal">
+                    <h2 class="text-sm font-bold tracking-widest uppercase">Instagram</h2>
+                    <span class="opacity-30 group-hover:opacity-100 transition">@iamaddictedtoblackcoffee</span>
+                </a>
+
+                <a href="mailto:ifrah.imtiaz2612@gmail.com" class="bento-card !min-h-[80px] flex items-center justify-between px-8 py-6 group reveal">
+                    <h2 class="text-sm font-bold tracking-widest uppercase">Email</h2>
+                    <span class="opacity-30 group-hover:opacity-100 transition">Direct Message</span>
+                </a>
+
+                <a href="#" class="bento-card !min-h-[80px] bg-white !text-black flex items-center justify-between px-8 py-6 group border-none reveal">
+                    <h2 class="text-sm font-bold tracking-widest uppercase">Download CV</h2>
+                    <span class="font-bold">PDF</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inzaghi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+</head>
+<body class="bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+<div id="cursor"></div>
+    <nav class="p-6 md:p-10 fixed top-0 w-full z-50 flex justify-between mix-blend-difference font-bold text-[10px] tracking-widest uppercase">
+        <a href="index.html" class="hover:opacity-50 transition">← Back To Home</a>
+        <div>INZAGHI</div>
+    </nav>
+
+    <main class="pt-32 md:pt-48 px-6 md:px-20 pb-40">
+        <div class="mb-12 reveal">
+            <span id="p-tags-container" class="flex gap-2 mb-6">
+                </span>
+            <h1 id="p-title" class="hero-text text-[14vw] md:text-[10vw] uppercase leading-[0.85] mb-8"></h1>
+        </div>
+        
+        <div id="p-media" class="w-full h-[50vh] md:h-[85vh] rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#111] mb-20 md:mb-32 shadow-2xl reveal">
+            </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 reveal">
+            
+            <div class="lg:col-span-7">
+                <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-8 font-bold">Project Overview</h3>
+                <p id="p-description" class="text-3xl md:text-5xl font-light leading-tight tracking-tight mb-12"></p>
+                
+                <div class="h-[1px] w-full bg-white/10 my-16"></div>
+                
+                <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-8 font-bold">The Deep Dive</h3>
+                <p id="p-details" class="text-lg md:text-xl opacity-60 leading-relaxed font-light max-w-2xl"></p>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="sticky top-40 space-y-16">
+                    <div>
+                        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-bold">Technologies</h3>
+                        <div id="p-tech-list" class="flex flex-wrap gap-3">
+                            </div>
+                    </div>
+
+                    <div id="link-container">
+                        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-bold">Action</h3>
+                        <a id="p-link" href="#" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between w-full border border-white/20 px-8 py-6 rounded-2xl hover:bg-white hover:text-black transition-all duration-500">
+                            <span class="uppercase text-[10px] tracking-[0.2em] font-bold">Visit Live Project</span>
+                            <span class="text-xl group-hover:translate-x-1 transition-transform">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="p-20 text-center opacity-20 text-[8px] uppercase tracking-[0.5em]">
+        © 2026 INZAGHI — Detailed Case Study
+    </footer>
+
+    <script src="project-data.js"></script>
+    <script src="project-detail.js"></script>
+</body>
+</html>

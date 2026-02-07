@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INZAGHI | 404 System Error</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-[#050505] text-white selection:bg-white selection:text-black overflow-hidden">
+
+    <div id="page-transition"></div>
+    <div id="cursor"></div>
+
+    <main class="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative z-10">
+        
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+            <h1 class="text-[50vw] font-bold select-none">?</h1>
+        </div>
+
+        <div class="mb-12 reveal">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" class="stroke-white animate-spin-slow opacity-30">
+                <path d="M12 2V5M12 19V22M2 12H5M19 12H22" stroke-width="1" stroke-linecap="round"/>
+                <path d="M12 7L17 12L12 17L7 12L12 7Z" stroke-width="1" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="0.5" fill="white"/>
+            </svg>
+        </div>
+
+        <div class="space-y-4">
+            <h1 class="hero-text text-8xl md:text-[12vw] reveal glitch" data-text="404">404</h1>
+            <p class="text-[10px] uppercase tracking-[0.8em] opacity-40 reveal">System Path: Broken or Non-Existent</p>
+        </div>
+
+        <div class="mt-16 reveal">
+            <a href="index.html" class="group text-[10px] uppercase tracking-widest font-bold border border-white px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-500 inline-flex items-center gap-3">
+                <span>Re-initialize System</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        const cursor = document.querySelector("#cursor");
+        
+        // Mouse Tracking
+        document.addEventListener("mousemove", (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        });
+
+        // Entrance Sequence
+        window.addEventListener("load", () => {
+            // Fade out the transition curtain
+            gsap.to("#page-transition", { 
+                opacity: 0, 
+                duration: 1.2, 
+                onComplete: () => document.getElementById('page-transition').style.visibility = 'hidden' 
+            });
+
+            // Animate 404 elements
+            gsap.to(".reveal", { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1.5, 
+                stagger: 0.2, 
+                ease: "expo.out" 
+            });
+        });
+
+        // Cursor Scaling for button
+        const btn = document.querySelector('a');
+        btn.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 8, backgroundColor: "rgba(255,255,255,0.1)" }));
+        btn.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: "white" }));
+    </script>
+</body>
+</html>
