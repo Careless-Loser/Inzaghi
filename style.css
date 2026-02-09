@@ -217,6 +217,7 @@ a:hover .animate-spin-slow {
     }
 
     main {
+<<<<<<< HEAD
         padding-top: 5rem !important;
     }
 }
@@ -252,6 +253,9 @@ a:hover .animate-spin-slow {
     
     .filter-btn {
         font-size: 8px !important; 
+=======
+        padding-top: 4rem !important;
+>>>>>>> 84764ed1447287b918cf3adf60c06c99acadab40
     }
 }
 
