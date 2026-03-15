@@ -146,26 +146,5 @@ export const projectsData: Record<string, any> = {
         },
         typography: { font: "Fira Code", desc: "Monospaced font system to emulate code environments and data structures." },
         palette: ["#00FFAA", "#008855", "#112211", "#050505"]
-    },
-    "photography": {
-        title: "Visual Storytelling",
-        tags: "UI/UX / Photography",
-        description: "A curated digital exhibition of cinematography and street photography.",
-        details: "This project is the 'Visual Foundation' of my entire portfolio. The concept is based on the idea that the rules of photography—composition, lighting, and geometry—are identical to the rules of UI design. By showcasing my cinematography and street photography, I am providing a look into my artistic eye and my understanding of visual balance. \n\n Technically, this digital exhibition focuses on 'High-Fidelity Asset Delivery.' I optimized my raw camera files for the web without losing the depth of color or dynamic range that is critical in fine art photography. This involved a complex workflow of color grading in Lightroom followed by web-specific compression to ensure the 'gallery' remains fast and responsive. \n\n The UX is designed to be 'Invisible.' There are no distracting buttons or social counters. The focus is entirely on the image, utilizing a full-screen lightbox system that allows the photography to speak for itself. The navigation is rhythmic, paced like a physical walk through an urban landscape, reflecting the street photography within. \n\n The main challenge was translating the 'Feeling' of street photography—which is often raw and chaotic—into a structured digital environment. I solved this by using a 'Mathematical Grid' for the gallery that contrasts with the fluid nature of the photos. This creates a tension between the frame and the subject, a concept I frequently bring into my UI/UX work. \n\n As a future step, I plan to integrate an AR (Augmented Reality) component where users can 'hang' my photos on their walls via their mobile browser. This project is the ultimate proof of my 'Techno-Poet' philosophy, demonstrating that technical precision and artistic vision are two sides of the same coin in modern digital creation.",
-        link: "https://www.instagram.com/iamaddictedtoblackcoffee",
-        media: "/assets/images/photography-hero.jpg",
-        isVideo: false,
-        process: [
-            { title: "Lightroom Grading", desc: "Color correcting raw files for cinematic depth." },
-            { title: "Asset Compression", desc: "Optimizing high-res imagery for lossless web delivery." },
-            { title: "Grid Mathematics", desc: "Structuring the masonry layout for visual balance." },
-            { title: "Lightbox UI", desc: "Building the invisible, full-screen gallery experience." }
-        ],
-        mockups: {
-            tablet: "/assets/images/photo-tablet.png",
-            mobile: ["/assets/images/photo-mobile-1.png", "/assets/images/photo-mobile-2.png", "/assets/images/photo-mobile-3.png"]
-        },
-        typography: { font: "Bodoni Moda", desc: "Editorial serif typeface mimicking high-end gallery and exhibition aesthetics." },
-        palette: ["#FFFFFF", "#A3A3A3", "#262626", "#050505"]
     }
 };
