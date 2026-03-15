@@ -7,10 +7,9 @@ import { motion } from "framer-motion";
 import WordReveal from "@/components/WordReveal";
 import Magnetic from "@/components/Magnetic";
 
-// Add this right under your imports!
 export function generateStaticParams() {
-  return projectsData.map((project) => ({
-    id: project.id.toString(), 
+  return Object.keys(projectsData).map((key) => ({
+    id: key,
   }));
 }
 
