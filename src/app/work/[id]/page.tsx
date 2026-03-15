@@ -7,11 +7,6 @@ import { motion } from "framer-motion";
 import WordReveal from "@/components/WordReveal";
 import Magnetic from "@/components/Magnetic";
 
-export function generateStaticParams() {
-  return Object.keys(projectsData).map((key) => ({
-    id: key,
-  }));
-}
 
 // Shrunk the sizes by ~25% for a more subtle background effect
 const scatteredBlocks = [
