@@ -7,6 +7,13 @@ import { motion } from "framer-motion";
 import WordReveal from "@/components/WordReveal";
 import Magnetic from "@/components/Magnetic";
 
+// Add this right under your imports!
+export function generateStaticParams() {
+  return projectsData.map((project) => ({
+    id: project.id.toString(), 
+  }));
+}
+
 // Shrunk the sizes by ~25% for a more subtle background effect
 const scatteredBlocks = [
   { top: "15%", left: "10%", width: "w-[60px] md:w-[90px]", rotate: "-rotate-12" },
