@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google"; 
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustonCursor";
 
-const inter = Inter({ subsets: ["latin"] });
+import SmoothScroll from "@/components/SmoothScroll";
+import Cursor from "@/components/Cursor";
+import Terminal from "@/components/Terminal"; 
+import Diagnostics from "@/components/Diagnostics"; 
+import MiniGame from "@/components/MiniGame";
+
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Creative Developer | Portfolio",
-  description: "Full-stack digital experiences",
+  title: "II | Creative Technologist", 
+  description: "Portfolio of the future",
 };
 
 export default function RootLayout({
@@ -17,11 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-black text-white cursor-none">
-      <body className={inter.className}>
-        <CustomCursor />
-        {/* Drop your SystemBoot Framer Motion component here to conditionally render before the children */}
-        <SmoothScroll>{children}</SmoothScroll>
+    <html lang="en" className={`${oswald.variable} ${inter.variable} dark`}>
+      <body className="antialiased md:cursor-none bg-background text-foreground transition-colors duration-500">
+        <SmoothScroll>
+          <Cursor />
+          <MiniGame />
+          <Terminal /> 
+          <Diagnostics /> {/* <-- 2. Add it right below the Terminal */}
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
