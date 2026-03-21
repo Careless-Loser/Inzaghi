@@ -55,10 +55,10 @@ export default function ContactPage() {
               <a href="https://github.com/Careless-Loser" target="_blank" rel="noreferrer" className="text-foreground hover:opacity-70 transition-opacity border-b border-transparent hover:border-foreground w-fit">
                 GitHub ↗
               </a>
-              <a href="https://www.instagram.com/iamaddictedtoblackcoffee" target="_blank" rel="noreferrer" className="text-foreground hover:opacity-70 transition-opacity border-b border-transparent hover:border-foreground w-fit">
+              <a href="https://www.instagram.com/im_inzaghi" target="_blank" rel="noreferrer" className="text-foreground hover:opacity-70 transition-opacity border-b border-transparent hover:border-foreground w-fit">
                 Instagram ↗
               </a>
-              <a href="#" className="text-foreground hover:opacity-70 transition-opacity border-b border-transparent hover:border-foreground w-fit">
+              <a href="https://www.linkedin.com/in/ifrahimtiaz/" className="text-foreground hover:opacity-70 transition-opacity border-b border-transparent hover:border-foreground w-fit">
                 LinkedIn ↗
               </a>
             </motion.div>
